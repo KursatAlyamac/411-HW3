@@ -20,8 +20,15 @@ class View:
     error(error: str) -> Response:
         Returns an error message as a JSON response.
     """
-
+    
     def board_state(self, board: Board) -> Response:
+        """
+        output example:
+        {
+        "board": ["X", "O", "X", "O", "X", "O", "X", "O", "X"] #based on index, from 0-8, counting from left -> right
+        }
+        
+        """
         """
         Returns the current state of the board as a JSON response.
 
@@ -35,9 +42,22 @@ class View:
         Response
             A Flask response object containing the board state.
         """
+
+        """
+        return jsonify({'board': board.squares}) 
+        """
+        
         pass
 
     def get_winner(self, winner: str = None) -> Response:
+        """
+        output example:
+        {
+        "winner": null
+        or
+        "winner": "X"
+        }
+        """
         """
         Returns the winner of the game as a JSON response.
 
@@ -51,9 +71,20 @@ class View:
         Response
             A Flask response object containing the winner.
         """
+        """
+        return jsonify({'winner': winner})
+        """
+
         pass
 
     def error(self, error: str) -> Response:
+
+        """
+        output example:
+        {
+        "error": "Invalid move"
+        }
+        """
         """
         Returns an error message as a JSON response.
 
@@ -66,5 +97,8 @@ class View:
         -------
         Response
             A Flask response object containing the error message.
+        """
+        """
+        return jsonify({'error': error}), 400  #status code 200 means ok request, 400 means bad request, 404 means request not found
         """
         pass
