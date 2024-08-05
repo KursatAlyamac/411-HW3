@@ -43,6 +43,13 @@ class Model:
         """
         Initializes the Model with an empty board and sets the starting player to 'X'.
         """
+        """
+        #Creating board attributes
+        
+        self.board = Board([' ',' ',' ',' ',' ',' ',' ',' ',' ']) #create board from indeces 0-8
+        self.player = 'X' #create player and set to 'X'
+        self.winner = None  #set winner to none
+        """
         pass
 
     def get_current_player(self) -> str:
@@ -54,17 +61,26 @@ class Model:
         str
             The current player ('X' or 'O').
         """
+        """
+        return self.player
+        """
         pass
 
     def change_player(self) -> None:
         """
         Switches the current player from 'X' to 'O' or from 'O' to 'X'.
         """
+        """
+        #if self.player == 'X', then self.player == 'O', else self.player == 'X'  wrong syntax needs to be written properly
+        """
         pass
 
     def set_winner(self) -> None:
         """
         Checks for a winner and sets the winner attribute if there is one.
+        """
+        """
+        need to implement logic, check diagonals, check rows, check columns, then do self.winner == 'X' or 'O' etc.
         """
         pass
 
@@ -77,6 +93,9 @@ class Model:
         Optional[str]
             The winner of the game, or None if there is no winner yet.
         """
+        """
+        return self.winner  #simple return of winner
+        """
         pass
 
     def get_board_state(self) -> list[str]:
@@ -87,6 +106,9 @@ class Model:
         -------
         list[str]
             A copy of the current board state.
+        """
+        """
+        return self.board.squares[:] #return copy list of board
         """
         pass
 
