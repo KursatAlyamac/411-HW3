@@ -43,12 +43,8 @@ class View:
             A Flask response object containing the board state.
         """
 
-        """
         return jsonify({'board': board.squares}) 
-        """
         
-        pass
-
     def get_winner(self, winner: str = None) -> Response:
         """
         output example:
@@ -71,11 +67,7 @@ class View:
         Response
             A Flask response object containing the winner.
         """
-        """
         return jsonify({'winner': winner})
-        """
-
-        pass
 
     def error(self, error: str) -> Response:
 
@@ -98,7 +90,4 @@ class View:
         Response
             A Flask response object containing the error message.
         """
-        """
         return jsonify({'error': error}), 400  #status code 200 means ok request, 400 means bad request, 404 means request not found
-        """
-        pass
