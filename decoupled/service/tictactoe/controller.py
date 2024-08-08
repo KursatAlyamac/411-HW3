@@ -60,13 +60,15 @@ def validate_index(index: str) -> int:
     ValueError
         If the index is not a valid integer or is out of bounds.
     """
-    if not index.isdigit(): #protection check so the next line of code works, this can prob be deleted
-        raise ValueError("Index must be a digit")
 
-    index = int(index)
+    try:
+        index = int(index)
+    except ValueError:
+        raise ValueError(INVALID_MOVE_ERROR_MSG)
 
-    if index < 0 or index > 8:  #checks the indeces from 0-8, if not in range raises error
-        raise ValueError("Index out of bounds")
+    if index < 0 or index > 8:
+        raise ValueError(INVALID_MOVE_ERROR_MSG)
+
     return index
 
 def make_move(index: str) -> Response:
